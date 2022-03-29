@@ -46,7 +46,7 @@ router.delete("/:id", verificacion, async (req, res) => {
 // OBTENER 1 USUARIO
 router.get("/find/:id", async (req, res) => {
   try {
-    const usuario = await Usuario.findOneAndDelete(req.params.id);
+    const usuario = await Usuario.findById(req.params.id);
     const { password, ...info } = usuario._doc;
     res.status(200).json(info);
   } catch (error) {
