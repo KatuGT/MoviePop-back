@@ -18,7 +18,7 @@ app.use(express.json())
 app.use("/api/aut", autenticacionRuta)
 app.use("/api/usuario", usuarioRuta)
 
-app.listen(5002, () => {
+app.listen( process.env.PORT|| 5002, () => {
     console.log("server funcionando");
 })
 
